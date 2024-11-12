@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Search App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="movie.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Поиск и кнопка "Найти" -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Поиск фильма..." />
+            <button id="search-button">Найти</button>
+        </div>
+
+        <!-- Автодополнение -->
+        <div id="auto-suggest-results" class="auto-suggest-results"></div>
+
+        <!-- Сортировка -->
+        <div>
+            <label for="sort-by">Сортировать по:</label>
+            <select id="sort-by">
+                <option value="popularity.desc">Популярности</option>
+                <option value="release_date.desc">Дате выпуска</option>
+                <option value="vote_average.desc">Рейтингу</option>
+            </select>
+        </div>
+
+        <!-- Контейнер для отображения фильмов -->
+        <div id="movies-container"></div>
+
+     <!-- Модальное окно -->
+<div id="movie-details-modal">
+    <div id="movie-details-content">
+        <button id="close-modal">&times;</button> <!-- Кнопка закрытия -->
+        <h2 id="movie-title"></h2>
+        <img id="movie-poster" src="" alt="Movie Poster">
+        <p id="movie-runtime"></p>
+        <p id="movie-overview"></p>
+        <h3>Актеры:</h3>
+        <ul id="movie-cast"></ul>
+        <p>Рейтинг: <span id="movie-rating"></span></p>
+        <button id="add-to-watchlist">Добавить в избранное</button>
+    </div>
+</div>
+
+    <button id="watchlist-button">Посмотреть избранные фильмы</button>
+
+
+    <script src="movie.js"></script>
+</body>
+</html>

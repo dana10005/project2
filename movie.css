@@ -1,0 +1,296 @@
+/* Общие стили */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #c2a2a2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Контейнер для всей страницы */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Стили для поиска */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    gap: 10px;
+}
+
+#search-input {
+    padding: 12px 20px;
+    font-size: 16px;
+    width: 320px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    outline: none;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+#search-input:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+}
+
+#search-button {
+    padding: 12px 20px;
+    background-color: #ff6f61;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #ff5a4e;
+    transform: scale(1.05);
+}
+
+/* Стили для автодополнения */
+.auto-suggest-results {
+    position: absolute;
+    background-color: white;
+    width: 320px;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    display: none;
+    z-index: 10;
+}
+
+.auto-suggest-results div {
+    padding: 12px;
+    cursor: pointer;
+}
+
+.auto-suggest-results div:hover {
+    background-color: #f4f4f4;
+}
+
+/* Контейнер для фильмов */
+#movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Карточка фильма */
+.movie-card {
+    width: 220px;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 2px solid #ff6f61;
+}
+
+.movie-card h3 {
+    font-size: 18px;
+    color: #333;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.movie-card p {
+    font-size: 12px;
+    color: #888;
+    padding: 0 15px 15px;
+    text-align: center;
+}
+
+/* Модальное окно с деталями фильма */
+#movie-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    color: white;
+    z-index: 20;
+    overflow-y: auto;
+    border-radius: 15px;
+}
+
+#movie-details-modal img {
+    max-width: 250px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#movie-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ff6f61;
+}
+
+#movie-runtime,
+#movie-overview,
+#movie-rating {
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    color: #ddd;
+}
+
+#movie-cast {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    color: #f1f1f1;
+}
+
+#movie-cast li {
+    font-size: 14px;
+}
+
+/* Кнопка "Добавить в избранное" */
+#add-to-watchlist {
+    padding: 12px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+}
+
+#add-to-watchlist:hover {
+    background-color: #ff5a4e;
+    transform: scale(1.05);
+}
+
+/* Кнопка "Закрыть" */
+#close-modal {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#close-modal:hover {
+    color: #ff6f61;
+}
+
+/* Кнопка "Посмотреть избранные фильмы" */
+#watchlist-button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#watchlist-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Общие стили для всех кнопок */
+button {
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+/* Кнопка "Закрыть" */
+#close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#close-modal:hover {
+    background-color: rgba(255, 111, 97, 0.8);
+    transform: scale(1.1);
+}
+
+/* Для иконки "X" */
+#close-modal:before {
+    content: '×';  
+    font-size: 30px;
+    color: white;
+}
+
+/* Анимация при открытии модального окна */
+#movie-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 30px;
+    box-sizing: border-box;
+    z-index: 20;
+    overflow-y: auto;
+    border-radius: 15px;
+}

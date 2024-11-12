@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Погода в вашем городе</h1>
+        
+        <!-- Поиск города -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Введите город..." autocomplete="off" />
+            <button id="search-button">Найти</button>
+            <div id="autocomplete-results" class="auto-suggest-results"></div>
+        </div>
+        
+        <!-- Выбор единиц измерения -->
+        <div class="unit-toggle">
+            <label for="unit-toggle">Температура: </label>
+            <button id="unit-toggle">°C</button>
+        </div>
+
+        <!-- Отображение текущей погоды -->
+        <div id="current-weather">
+            <h2 id="city-name">Город</h2>
+            <p id="weather-description">Погода: <span id="weather-condition"></span></p>
+            <p id="temperature">Температура: <span id="temp-value"></span>°C</p>
+            <p id="humidity">Влажность: <span id="humidity-value"></span>%</p>
+            <p id="wind-speed">Скорость ветра: <span id="wind-speed-value"></span> м/с</p>
+            <img id="weather-icon" src="" alt="Weather Icon">
+        </div>
+
+        <!-- Прогноз на 5 дней -->
+        <div id="forecast">
+            <h3>Прогноз на 5 дней</h3>
+            <div id="forecast-container">
+                <!-- Прогноз для каждого дня будет добавляться сюда -->
+            </div>
+        </div>
+
+        <!-- Сообщение об ошибке -->
+        <div id="error-message" style="display: none;">Не удалось получить данные о погоде.</div>
+
+        <!-- Кнопка для использования геолокации -->
+        <button id="geolocation-button">Использовать моё местоположение</button>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
